@@ -1,0 +1,42 @@
+<div class="container">
+  
+  <h3 class="text-center">
+    <ion-icon name="car-sport-outline" size="large"></ion-icon>
+      Rota Certa
+    </h3>
+
+    <br>
+
+    <!--Botao de limpar-->
+    <div class="ion-text-end" >
+      <ion-button (click)="limpar()" color="light"><ion-icon name="trash-bin-outline"></ion-icon></ion-button>
+    </div>
+
+    <br>
+
+    <!--Distancia-->
+      <ion-item>
+        <ion-label position="floating">Distancia (Km)</ion-label>
+        <ion-input  type="number" class="w-100" min="0" placeholder="Ex: 100" [(ngModel)]="qtdDistancia" (keyup)="calcularTotal()"></ion-input>
+      </ion-item>
+
+      <!--Combustivel-->
+    <ion-item>
+      <ion-label position="floating">Valor do combustível (R$)</ion-label>
+      <ion-input  type="number" class="w-100" min="0" placeholder="Ex: 5" [(ngModel)]="qtdCombustivel" (keyup)="calcularTotal()"></ion-input>
+    </ion-item>
+    <!--Consumo-->
+    <ion-item>
+      <ion-label position="floating">Consumo (Km/L)</ion-label>
+      <ion-input   type="number" class="w-100" min="0" placeholder="Ex: 7" [(ngModel)]="qtdConsumo" (keyup)="calcularTotal()"></ion-input>
+    </ion-item>
+
+    <br><br>
+
+    <div class="ion-text-center">
+      <h3 type="number" (click)="calcularTotal()">Total:  {{ resultado.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})      }}</h3>
+    </div>
+
+  </div>
+
+
